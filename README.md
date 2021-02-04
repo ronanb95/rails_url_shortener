@@ -1,24 +1,3 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a URL shortener application written in Ruby. I am focusing on using a TDD methodology whilst creating this application. I also want to ensure that the application is scalable and usable in a practical sense. I am using the RSpec in order to complete tests on the application.
