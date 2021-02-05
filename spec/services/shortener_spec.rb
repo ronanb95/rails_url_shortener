@@ -21,16 +21,16 @@ RSpec.describe Shortener do
         expect(code_2).not_to eq(code_1)
     end
 
-    it "always gives the same url the same lookup code" do
+    it "gives each valid Link record a look_up code that is unique" do
         url="https://gapfish.com/welcome/"
         shortener = Shortener.new(url)
-        code_1 = shortener.lookup_code
+        link1 = shortener.generate_short_link
 
-        url="https://gapfish.com/welcome/"
-        shortener = Shortener.new(url)
-        code_2 = shortener.lookup_code
+        link2 = shortener.generate_short_link
 
-        expect(code_2).to eq(code_1)
+        link3 = shortener.generate_short_link
+
+        expect(link3.valid?).to eq(true)
     end
 
 end
