@@ -25,12 +25,10 @@ class Shortener
             url << "x"
         end
         
-        i = 0
         loop do 
             #Not best strategy as may run out of characters 
-            code = get_fresh_code(i)
-            break code unless link_model.exists?(lookup_code: code)
-            i = i + 1
+            code = get_fresh_code()
+            break code unless link_model.exists?(lookup_code: code  )
         end
 
     end
@@ -40,12 +38,16 @@ class Shortener
         link_model.create!(original_url: url, lookup_code: lookup_code)
     end
 
-
     private
 
     #The seperation of this method from the loop allows us to change the algorithm easily
-    def get_fresh_code(i)
-        Digest::SHA1.hexdigest(url)[i..(i+6)]
+    
+    # def get_fresh_code(i)
+    #     Digest::SHA1.hexdigest(url)[i..(i+6)]
+    # end
+
+    def get_fresh_code
+        SecureRandom.uuid[0..6]
     end
     
 
