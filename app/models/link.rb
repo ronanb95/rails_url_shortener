@@ -15,4 +15,8 @@ class Link < ApplicationRecord
         end
     end
 
+    def shortened_url
+        "https://localhost:3000/#{lookup_code}"
+    end
+
 end

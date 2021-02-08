@@ -1,3 +1,3 @@
-var lookupCode = "<%= @link.lookup_code %>";
+var lookupCode = "<%= @link.shortened_url %>";
 
-alert(lookupCode);
+document.getElementById('shortLink').innerHTML = "<p>" + lookupCode +"</p>";

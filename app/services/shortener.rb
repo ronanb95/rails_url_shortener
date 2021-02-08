@@ -35,7 +35,7 @@ class Shortener
 
     def generate_short_link
         #Without the ! the creation will fail "quietly", wont throw error 
-        link_model.create!(original_url: url, lookup_code: lookup_code)
+        link_model.create(original_url: url, lookup_code: lookup_code)
     end
 
     private
