@@ -1,12 +1,24 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container">
+    <div class="p-5">
+        <div class="card">
+            <div class="card-body">
 
-<%= form_with model: @link, remote: true do |form| %>
+                <%= form_with model: @link, remote: true do |form| %>
 
-    <%= form.text_field :original_url %>
-    <%= form.submit %>
+                <h4>Enter URL Below</h4>
+                <%= form.text_field :original_url, class:"form-control" %>
+                <div class="col text-center">
+                    <%= form.submit "Generate new link", class:"btn btn-primary mt-3"%>
+                </div>
 
-<% end %>
+                <% end %>
 
-<div id="shortLink">
+                <div id="shortLink">
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
+
+
