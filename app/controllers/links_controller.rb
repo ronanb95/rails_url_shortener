@@ -4,7 +4,12 @@ class LinksController < ApplicationController
         #look_up var name param set in the routes
         lookup_code = params[:lookup_code]
         @link = Link.find_by(lookup_code: lookup_code)
-        redirect_to @link.original_url
+        unless @link.nil?
+            redirect_to @link.original_url  
+        end 
+        redirect_to root_path, alert: "Oops, looks link that link doesn't exist. Why not make a new one now."
+        #render 'non_link.js.erb'
+        #redirect_to @link.original_url
     end
     
     

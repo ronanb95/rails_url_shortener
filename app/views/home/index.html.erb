@@ -1,4 +1,11 @@
 <div class="container">
+    
+    <% flash.each do |name, msg| -%>
+        <div class="text-center alert alert-danger">
+            <%= content_tag :div, msg, class: name %>
+        </div>
+    <% end -%>
+    
     <div class="p-5">
         <div class="card">
             <div class="card-body">
